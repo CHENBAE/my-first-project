@@ -3,8 +3,8 @@
     <!-- 左侧菜单 -->
     <el-aside :width="isCollapse ? '64px' : '200px'" class="aside">
       <div class="logo" @click="isCollapse = !isCollapse">
-        <img v-if="!isCollapse" src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=modern%20admin%20system%20logo&image_size=square" alt="Logo" />
-        <img v-else src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=minimal%20admin%20logo&image_size=square" alt="Logo" />
+        <img v-if="!isCollapse" src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=government%20institution%20logo%2C%20blue%20color%2C%20no%20text%2C%20abstract%20symbol%2C%20official%20style%2C%20professional&image_size=square" alt="Logo" />
+        <img v-else src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=minimal%20government%20logo%2C%20blue%20color%2C%20no%20text%2C%20abstract%20symbol&image_size=square" alt="Logo" />
       </div>
       <el-menu
         :default-active="activeMenu"
@@ -147,7 +147,7 @@ export default {
       activeMenu: '',
       breadcrumb: '',
       userInfo: JSON.parse(localStorage.getItem('user')) || {},
-      userAvatar: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=professional%20user%20avatar&image_size=square'
+      userAvatar: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=professional%20government%20official%20avatar%2C%20formal%20style&image_size=square'
     }
   },
   mounted() {

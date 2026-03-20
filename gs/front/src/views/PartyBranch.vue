@@ -26,12 +26,14 @@
         <el-table-column prop="remark" label="备注" />
         <el-table-column label="操作" width="150" v-if="isAdmin">
           <template #default="scope">
-            <el-button type="primary" size="small" @click="handleEdit(scope.row)">
-              <el-icon><Edit /></el-icon> 编辑
-            </el-button>
-            <el-button type="danger" size="small" @click="handleDelete(scope.row.id)">
-              <el-icon><Delete /></el-icon> 删除
-            </el-button>
+            <div class="action-buttons">
+              <el-button type="primary" size="small" @click="handleEdit(scope.row)">
+                <el-icon><Edit /></el-icon> 编辑
+              </el-button>
+              <el-button type="danger" size="small" @click="handleDelete(scope.row.id)">
+                <el-icon><Delete /></el-icon> 删除
+              </el-button>
+            </div>
           </template>
         </el-table-column>
       </el-table>
@@ -258,5 +260,11 @@ export default {
   display: flex;
   justify-content: flex-end;
   margin-top: 20px;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
 </style>
