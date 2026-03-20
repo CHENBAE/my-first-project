@@ -102,6 +102,7 @@ CREATE TABLE IF NOT EXISTS sys_announcement (
 );
 
 -- 初始化用户数据
+DELETE FROM sys_user WHERE username IN ('admin', 'user');
 INSERT INTO sys_user (username, password, role) VALUES
 ('admin', 'admin123', 'admin'),
 ('user', 'user123', 'user');

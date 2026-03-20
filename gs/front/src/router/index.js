@@ -75,16 +75,16 @@ const router = createRouter({
   routes
 })
 
-// 路由守卫
-router.beforeEach((to, from, next) => {
+// 导航守卫
+router.beforeEach((to, from) => {
   const token = localStorage.getItem('token')
   if (to.path === '/login') {
-    next()
+    return true
   } else {
     if (token) {
-      next()
+      return true
     } else {
-      next('/login')
+      return '/login'
     }
   }
 })
