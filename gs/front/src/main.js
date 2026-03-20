@@ -6,7 +6,7 @@ import router from './router'
 import axios from 'axios'
 
 // 配置axios默认值
-axios.defaults.baseURL = 'http://localhost:8080/api'
+axios.defaults.baseURL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080/api'
 axios.defaults.headers.common['Content-Type'] = 'application/json'
 
 // 添加请求拦截器，在请求头中添加token

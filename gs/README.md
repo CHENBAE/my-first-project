@@ -35,15 +35,21 @@
 
 ## 部署运行
 
-### 1. 数据库初始化
+### 1. 环境准备
 
-执行 `init.sql` 脚本创建数据库和初始化数据：
+- **后端环境**：JDK 1.8 或 17，Maven 3.8+
+- **前端环境**：Node.js 16+，npm 7+
+- **数据库**：MySQL 8.0+
+
+### 2. 数据库初始化
+
+执行 `sql/init.sql` 脚本创建数据库和初始化数据（建议使用 MySQL 8.0 版本）：
 
 ```bash
-mysql -u root -p < init.sql
+mysql -u root -p < sql/init.sql
 ```
 
-### 2. 后端启动
+### 3. 后端启动
 
 ```bash
 # 编译打包
@@ -51,9 +57,11 @@ mvn clean package
 
 # 运行 jar 包
 java -jar target/admin-system-1.0.0.jar
+
+# 启动类位置：src/main/java/com/example/adminsystem/AdminSystemApplication.java
 ```
 
-### 3. 前端启动
+### 4. 前端启动
 
 ```bash
 # 进入前端目录
